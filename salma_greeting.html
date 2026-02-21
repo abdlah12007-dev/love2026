@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 <head>
-    <title>Salma Greeting</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسالة حب</title>
+    <script>
+        function checkPassword() {
+            const password = prompt('من فضلك أدخل كلمة المرور لدخول الرسالة:');
+            if (password === 'secretPassword') {
+                document.getElementById('loveMessage').style.display = 'block';
+            } else {
+                alert('كلمة المرور غير صحيحة.');
+            }
+        }
+    </script>
 </head>
-<body>
-    <h1>Welcome Salma!</h1>
-    <p>This is a greeting message.</p>
+<body onload="checkPassword()">
+    <h1>مرحبا بكم في رسالة الحب</h1>
+    <div id="loveMessage" style="display:none;">
+        <p>هذا نص رسالة الحب العربية.</p>
+    </div>
 </body>
 </html>
