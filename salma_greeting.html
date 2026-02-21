@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رسالة حب</title>
+    <title>Love Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8e1e1;
+            color: #6d1f1f;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            border: 2px solid #6d1f1f;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+    </style>
     <script>
         function checkPassword() {
-            const password = prompt('من فضلك أدخل كلمة المرور لدخول الرسالة:');
-            if (password === 'secretPassword') {
-                document.getElementById('loveMessage').style.display = 'block';
+            var password = document.getElementById("password").value;
+            if (password === "your_password") {
+                document.getElementById("message").style.display = "block";
+                document.getElementById("passwordForm").style.display = "none";
             } else {
-                alert('كلمة المرور غير صحيحة.');
+                alert("Incorrect password");
             }
         }
     </script>
 </head>
-<body onload="checkPassword()">
-    <h1>مرحبا بكم في رسالة الحب</h1>
-    <div id="loveMessage" style="display:none;">
-        <p>هذا نص رسالة الحب العربية.</p>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Love Message</h1>
+        <form id="passwordForm" onsubmit="event.preventDefault(); checkPassword();">
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="message" style="display:none;">
+            <h2>💖 Your Love Message 💖</h2>
+            <p>Dear Salma, I cherish every moment spent with you. You are my heart's desire!</p>
+        </div>
     </div>
 </body>
 </html>
